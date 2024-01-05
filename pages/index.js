@@ -4,6 +4,7 @@ import Navbar from '@/components/Navbar';
 import Map from "@/components/MapServerside"
 import Link from 'next/link';
 import { useState,useEffect } from 'react';
+import Acco from '@/models/accountswip';
 
 const getDors = async () => {
   try {
@@ -132,8 +133,12 @@ export default function Home() {
 
 
 
+
     
       </div>
+
+      
+
 
       <div>
         room recomment
