@@ -31,18 +31,18 @@ export default function Search() {
     e.preventDefault();
     const dorm_list = [];
     const {Acco} = await getAcco();
-    let dorm_value = 0;let pass_value = 0;
-      dorm.map((u) => (
-        dorm_list.push(u.username)
+    let dorm_value = 0;
+      Acco.map((u) => (
+        dorm_list.push(u.dorm)
       ));
     for (let i = 0 ; i<dorm_list.length;i++){
-      if(dorm_list[i] == user_login){
+      if(dorm_list[i] == dorm_login){
         dorm_value = 1;
       }
     }
     // check value username&password  1 or 0
     
-    if (user_value == 1 && pass_value == 1){
+    if (dorm_value == 1 ){
       alert("Login Success!!");
       try{
           router.push("/RoomType");
