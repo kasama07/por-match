@@ -57,7 +57,7 @@ export default function Navbar(){
                                 <a href="#">PRICE RANG</a>
                                 <a href="#">HELP</a>
                                 <a href="/homeswip">account</a>
-                                <a href="/homeswip/macth">macth</a>
+                                <a href="/homeswip/Search">macth</a>
                             </div>
                         </div>
                     <Link href="/addRoom" className={styles.menulist}><span >add Room</span></Link>

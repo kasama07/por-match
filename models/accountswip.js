@@ -5,10 +5,14 @@ const accountswipSchema = new Schema (
     {
         username: String ,
         dorm: String,
-        faculty: String,
-        gender: String
+        img:String,
+        faculty:String,
+        gender:String
+        
+        
     },
-    {timestamps:true,}
+    { timestamps : true ,}
 );
-const Acco = mongoose.models.Acco || mongoose.mongoose.model("Acco",accountswipSchema);
+const Acco = mongoose.models.Acco || mongoose.model("Acco",accountswipSchema);
+
 export default Acco;

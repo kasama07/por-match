@@ -6,12 +6,14 @@ import { useRouter } from "next/router";
 export default function homeswip(){
   const [username , setUsername] = useState(""); 
   const [dorm , setDrom] = useState("");
+  const [img , setImg] = useState("");
   const [faculty , setFaculty] = useState("");
   const [gender , setGender] = useState("");
   const router = useRouter();
+  
   const handleSubmitt = async (e) => {
     e.preventDefault();
-    if(!username || !dorm || !faculty || !gender  ){
+    if(!username || !dorm || !img || !faculty || !gender  ){
       console.log("Error!");
       alert("empty!!!");
     }
@@ -20,9 +22,9 @@ export default function homeswip(){
                 const res = await fetch("http://localhost:3000/api/getAcco", {
                   method: "POST",
                   headers: {
-                    "Content-username": "application/json",
+                    "Content-type": "application/json",
                   },
-                  body: JSON.stringify({username,dorm,faculty,gender }),
+                  body: JSON.stringify({username,dorm,img,faculty,gender }),
                 });
                 if (res.ok) {
                   router.push("/homeswip/match")
@@ -48,6 +50,10 @@ export default function homeswip(){
 
         <input className={styles.input_box} placeholder="dorm" type="text"
         onChange={(e) => setDrom(e.target.value)} value={dorm}/> 
+
+        <input className={styles.input_box} placeholder="img" type="text"
+        onChange={(e) => setImg(e.target.value)} value={img}/> 
+        
 
         <input className={styles.input_box} placeholder="faculty" type="text"
         onChange={(e) => setFaculty(e.target.value)} value={faculty}/>
